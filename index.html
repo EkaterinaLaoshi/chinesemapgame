@@ -43,31 +43,17 @@
 
 .cmg-small-targets{display:flex;flex-wrap:wrap;gap:7px;padding:12px 18px;border-top:1px solid var(--cmg-line)}.cmg-small-targets>span{width:100%;font-size:9px;color:var(--cmg-muted)}.cmg-small-targets button{min-height:44px;min-width:44px;padding:9px 13px;border:1px solid var(--cmg-line);border-radius:12px;background:var(--cmg-paper);font-size:11px}.cmg-small-targets button:hover,.cmg-small-targets button.is-hint{background:#f3dfb4}.cmg-small-targets button:disabled{opacity:.6;cursor:default}
 
-/* Original site navigation and contact footer; measured from ekaterina-laoshi.ru */
-.cmg-site-header{height:76px;padding:0;border:0;display:block}
-.cmg-site-nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:700;display:flex;align-items:center;justify-content:center;gap:6px;padding:6px 12px;width:max-content;max-width:calc(100% - 24px);border-radius:100px;background:rgba(255,250,247,.9);border:1px solid rgba(255,255,255,.5);backdrop-filter:blur(20px);box-shadow:0 8px 32px #00000014}
-.cmg-site-nav a{font:500 11px Inter,Arial,sans-serif!important;color:#3d2028!important;white-space:nowrap;padding:8px 9px;min-height:36px;display:flex;align-items:center;border-radius:100px;transition:background .2s}.cmg-site-nav a:hover{background:#6b1e2f19}
-.cmg-site-footer{display:block;border:0;padding:40px 0 50px;text-align:center}
-.cmg-site-cta-box{background:rgba(255,250,247,.65);border:1px solid #ffffff99;border-radius:34px;padding:32px 20px;box-shadow:0 14px 42px #4b141e24}
-.cmg-site-heading-lg{font:500 clamp(36px,5.5vw,72px)/1.05 'Cormorant Garamond',Georgia,serif;letter-spacing:-.025em}
-.cmg-site-text-lg{font:400 14px/1.7 Inter,Arial,sans-serif;color:#3d2028}
-.cmg-site-contact-grid{display:grid;gap:12px;margin-top:28px;text-align:left}
-.cmg-site-contact-item{display:flex;align-items:center;gap:14px;padding:18px;background:#ffffff80;border:1px solid #ffffffcc;border-radius:20px;transition:transform .25s,background .25s;color:#1f0e12!important;min-width:0}
-.cmg-site-contact-item:hover{transform:translateY(-3px);background:#ffffffe6}.cmg-site-contact-item__icon{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#6b1e2f14;font-size:23px;flex-shrink:0}.cmg-site-contact-item__label{font:400 12px/1.5 Inter,Arial,sans-serif;color:#7a525a}.cmg-site-contact-item__text{font:600 13px/1.6 Inter,Arial,sans-serif;overflow-wrap:anywhere}.cmg-site-contact-item>div:last-child{min-width:0}
-.cmg-site-cta-anketa{margin-top:26px}.cmg-site-btn{display:block;background:#6b1e2f;color:#fffaf7!important;padding:16px 18px;border-radius:100px;font:600 13px/1.5 Inter,Arial,sans-serif;text-align:center}.cmg-app a.cmg-site-btn{color:#fffaf7!important}
-.cmg-top{display:grid;place-items:center;padding:0;line-height:1;font-family:Arial,sans-serif;width:48px;height:48px;right:max(16px,env(safe-area-inset-right));bottom:calc(18px + env(safe-area-inset-bottom));border:1px solid #ffffff80;z-index:900;font-size:24px;cursor:pointer}
-@media(min-width:768px){.cmg-site-header{height:90px}.cmg-site-nav{top:24px;gap:18px;padding:10px 24px;background:rgba(255,250,247,.65)}.cmg-site-nav a{font-size:13px!important;padding:6px 14px}.cmg-site-contact-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:40px}.cmg-site-cta-box{padding:50px 40px}.cmg-site-text-lg{font-size:18px}.cmg-site-contact-item{padding:24px;gap:20px}.cmg-site-contact-item__text{font-size:16px}.cmg-site-btn{font-size:16px}}
-@media(min-width:1100px){.cmg-site-nav{gap:32px;padding:12px 32px}.cmg-site-nav a{font-size:14px!important}.cmg-site-cta-box{padding:70px 60px}.cmg-site-contact-item{padding:28px}.cmg-site-contact-item__icon{width:56px;height:56px;font-size:28px}}
 /* Small tablets use the full width for the map; no squeezed 240px sidebar. */
 @media(min-width:768px) and (max-width:1023px){.cmg-workspace{grid-template-columns:minmax(0,1fr)}.cmg-aside{padding:26px}.cmg-detail-zh{font-size:48px}.cmg-types{grid-template-columns:repeat(4,1fr)}.cmg-score-ring{margin:16px auto}.cmg-actions{grid-template-columns:1fr 1fr}}
 .cmg-bank-heading>span:last-child{line-height:1.6}.cmg-chip{min-height:44px}.cmg-zoom button{width:40px;height:40px}.cmg-text-button{min-height:44px}.cmg-accessible summary{min-height:44px}.cmg-map-footer{font-size:11px}.cmg-map-footer>span:last-child{font-size:10px}
 html[data-embed='1'] .cmg-site-header,html[data-embed='1'] .cmg-site-footer,html[data-embed='1'] .cmg-top{display:none!important}html[data-embed='1'] .cmg-app{min-height:0}html[data-embed='1'] .cmg-hero{padding-top:30px}html[data-embed='1'] .cmg-shell{padding-bottom:24px}
 
 .cmg-site-cta-box>.cmg-site-text-lg{max-width:600px;margin:16px auto 0}.cmg-site-contact-item__text{white-space:normal}
+
+.cmg-dynamic-bg{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:20}.cmg-fg-element{position:absolute;left:0;top:0;line-height:1;font-family:serif;will-change:transform;pointer-events:none;user-select:none}.cmg-cursor{position:fixed;width:20px;height:20px;border-radius:50%;background:#6b1e2f;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);opacity:0;transition:width .3s,height .3s,background .3s}.cmg-cursor.is-hover{width:60px;height:60px;background:#e8c4ca}.cmg-app>.cmg-shell{padding-top:0;padding-bottom:24px}@media(pointer:fine){html.cmg-custom-cursor,html.cmg-custom-cursor .cmg-app,html.cmg-custom-cursor .cmg-app *{cursor:none!important}}@media(pointer:coarse){.cmg-cursor{display:none}}@media(prefers-reduced-motion:reduce){.cmg-dynamic-bg{display:none}.cmg-cursor{transition:none}}
 </style></head><body>
-<main id="cmg-app" class="cmg-app">
+<main id="cmg-app" class="cmg-app"><div id="cmg-dynamic-bg" class="cmg-dynamic-bg" aria-hidden="true"></div><div id="cmg-cursor" class="cmg-cursor" aria-hidden="true"></div>
   <div class="cmg-shell">
-    <header class="cmg-header cmg-site-header"><nav class="cmg-site-nav" aria-label="Главная навигация"><a href="https://ekaterina-laoshi.ru/#about" target="_top">Обо мне</a><a href="https://ekaterina-laoshi.ru/#pricing" target="_top">Занятия</a><a href="https://ekaterina-laoshi.ru/#reviews" target="_top">Отзывы</a><a href="https://ekaterina-laoshi.ru/#contact" target="_top">Контакты</a></nav></header>
     <section class="cmg-hero cmg-reveal" aria-labelledby="cmg-title">
       <div><p class="cmg-eyebrow"><span></span> ГЕОГРАФИЯ ВСТРЕЧАЕТ КИТАЙСКИЙ</p><h1 id="cmg-title">Интерактивная<br>карта <em>Китая</em><span class="cmg-title-dot">.</span></h1><p class="cmg-intro">От первого знакомства до уверенного «я знаю».<br>Исследуйте регионы, находите их на карте и открывайте столицы.</p></div>
       <div class="cmg-seal" aria-hidden="true"><div class="cmg-seal-orbit"></div><span class="cmg-seal-chinese" lang="zh">中国</span><span class="cmg-seal-caption">БОЛЬШОЙ МИР · МАЛЕНЬКИЕ ШАГИ</span><span class="cmg-seal-number">34 <i>региона</i></span></div>
@@ -97,13 +83,7 @@ html[data-embed='1'] .cmg-site-header,html[data-embed='1'] .cmg-site-footer,html
     </section>
     <section class="cmg-how cmg-reveal" aria-labelledby="cmg-how-title"><div><p class="cmg-eyebrow">УЧИТЬСЯ — ЗНАЧИТ ПРОБОВАТЬ</p><h2 id="cmg-how-title">Один шаг.<br><em>И ещё один.</em></h2></div><div class="cmg-how-items"><article><span>01 /</span><h3>Посмотрите внимательно</h3><p>Начните с обучения. Переключайте язык и замечайте, как знакомые названия выглядят по-китайски.</p></article><article><span>02 /</span><h3>Дайте памяти поработать</h3><p>Перенесите название на карту. На телефоне достаточно выбрать карточку и коснуться региона или точки.</p></article><article><span>03 /</span><h3>Ошибаться — нормально</h3><p>Проверка приходит сразу. Попробуйте снова или попросите подсказку: она помогает, но не засчитывает ответ за вас.</p></article></div></section>
     <details class="cmg-notes"><summary>О карте и административных центрах</summary><p>Карта охватывает 34 единицы провинциального уровня по учебной классификации КНР. Тайвань включён в эту классификацию, но фактически управляется отдельно; Тайбэй показан как центр фактического управления. Для Пекина, Тяньцзиня, Шанхая и Чунцина ответ в третьем режиме — сам город. Гонконг и Макао — специальные административные районы без отдельной столицы; для них используются названия самих районов и условные центральные точки.</p><p>Учебная карта использует обобщённые реальные границы Natural Earth масштаба 1:10 млн, с отображением территорий по исходному набору. Она не заменяет официальную юридическую карту. Малые регионы вынесены для удобства выбора; линии указывают их положение. Источник: <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth, public domain</a>. <a href="https://www.locpg.gov.cn/2022-06/07/c_1211652713.htm" target="_blank" rel="noopener noreferrer">Административная классификация</a>.</p></details>
-    <footer class="cmg-footer cmg-site-footer"> <div class="cmg-site-cta-box is-visible"> <h2 class="cmg-site-heading-lg is-visible">Свяжитесь со мной</h2> <p class="cmg-site-text-lg is-visible">
-                    Выберите удобный способ — я всегда на связи и отвечаю лично.
-                </p> <div class="cmg-site-contact-grid"> <a href="tel:+79144186104" class="cmg-site-contact-item is-visible" target="_top"> <span class="cmg-site-contact-item__icon">📞</span> <div> <div class="cmg-site-contact-item__label">Телефон</div> <div class="cmg-site-contact-item__text">+7&nbsp;(914)&nbsp;418‑61‑04</div> </div> </a> <a href="https://t.me/ekaterinalaoshi_ch" target="_top" class="cmg-site-contact-item is-visible" rel="noopener"> <span class="cmg-site-contact-item__icon">✈️</span> <div> <div class="cmg-site-contact-item__label">Телеграм-канал</div> <div class="cmg-site-contact-item__text">@ekaterinalaoshi_ch</div> </div> </a> <a href="https://dzen.ru/yoyolikbez" class="cmg-site-contact-item is-visible" target="_top"> <span class="cmg-site-contact-item__icon">📖</span> <div> <div class="cmg-site-contact-item__label">Дзен-канал</div> <div class="cmg-site-contact-item__text">dzen.ru/yoyolikbez</div> </div> </a> <a href="https://t.me/Seventeenth29" target="_top" class="cmg-site-contact-item is-visible" rel="noopener"> <span class="cmg-site-contact-item__icon">💬</span> <div> <div class="cmg-site-contact-item__label">Личный Telegram</div> <div class="cmg-site-contact-item__text">@Seventeenth29</div> </div> </a> </div> <div class="cmg-site-cta-anketa"> <a href="https://ekaterina-laoshi.ru/list" target="_top" class="cmg-site-btn cmg-site-btn--primary" rel="noopener">
-                        Заполнить анкету нового ученика
-                    </a> </div> <!-- Planerka widget start -->   <!-- Planerka widget end --> </div> </footer>
   </div>
-  <button type="button" id="cmg-top" class="cmg-top" aria-label="Наверх">↑</button>
   <dialog id="cmg-reset-dialog" class="cmg-dialog"><h2>Начать с чистой карты?</h2><p>Прогресс текущего режима будет сброшен. Другой режим сохранится.</p><div><button type="button" id="cmg-reset-cancel" class="cmg-button cmg-button-light">Продолжить игру</button><button type="button" id="cmg-reset-confirm" class="cmg-button">Начать заново</button></div></dialog>
 </main>
 
@@ -241,8 +221,7 @@ $('#cmg-zoom-in').addEventListener('click',()=>setScale(scale+.5));$('#cmg-zoom-
 const reduced=typeof window.matchMedia==='function'&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if('IntersectionObserver' in window&&!reduced){root.classList.add('cmg-motion');const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}}),{threshold:.05});$$('.cmg-reveal').forEach(el=>observer.observe(el));}
 root.addEventListener('pointerdown',e=>{const button=e.target.closest('.cmg-button,.cmg-mode,.cmg-language button');if(!button||reduced)return;const box=button.getBoundingClientRect(),size=Math.max(box.width,box.height),r=document.createElement('span');r.className='cmg-ripple';r.style.width=r.style.height=`${size}px`;r.style.left=`${e.clientX-box.left-size/2}px`;r.style.top=`${e.clientY-box.top-size/2}px`;button.append(r);r.addEventListener('animationend',()=>r.remove(),{once:true});});
-const topButton=$('#cmg-top');document.body.append(topButton);const onScroll=()=>topButton.classList.toggle('is-visible',window.scrollY>450);window.addEventListener('scroll',onScroll,{passive:true});topButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:reduced?'auto':'smooth'}));
-updateView();render();onScroll();
+updateView();render();
 
 // Cross-origin embed bridge: height only, exact approved parent origin.
 const embedParams=new URLSearchParams(window.location.search),parentOrigin=embedParams.get('parentOrigin');
@@ -254,6 +233,26 @@ if(embedParams.get('embed')==='1'){
   sendHeight();if('ResizeObserver' in window)new ResizeObserver(sendHeight).observe(root);window.addEventListener('load',sendHeight);window.addEventListener('resize',sendHeight);document.fonts?.ready.then(sendHeight);
  }
 }
+
+// Same falling characters and interactive cursor as the homepage.
+(()=>{
+ const bg=document.getElementById('cmg-dynamic-bg'),cursor=document.getElementById('cmg-cursor');
+ document.body.append(cursor);
+ const fine=window.matchMedia?.('(pointer: fine)'),motion=window.matchMedia?.('(prefers-reduced-motion: reduce)');
+ const cursorMode=()=>{document.documentElement.classList.toggle('cmg-custom-cursor',!!fine?.matches);cursor.style.opacity='0';};cursorMode();fine?.addEventListener?.('change',cursorMode);
+ document.addEventListener('pointermove',e=>{if(!fine?.matches||e.pointerType==='touch')return;cursor.style.opacity='0.8';cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';cursor.classList.toggle('is-hover',!!e.target.closest('a,button,select,summary,[role="button"],[data-answer]'));},{passive:true});
+ const hideCursor=()=>{cursor.style.opacity='0';};document.addEventListener('pointerleave',hideCursor);window.addEventListener('blur',hideCursor);
+ const chars=['美','学','智','和','语','文','道','爱','心','力','知','善','德','礼','诗','梦','云','花','月','风','永','好','安','明','星','海','山','竹','梅','兰','❀','✿','❁','⚘','🌸'],colors=['#6b1e2f','#8b3a4d','#b8864e','#c97d8b','#a0525a'];
+ const items=[];let width=window.innerWidth,height=window.innerHeight,mx=-1000,my=height/2,last=0,raf=0;
+ const reset=(item,initial=false)=>{item.x=Math.random()*width;item.y=initial?Math.random()*height:-80;item.vx=(Math.random()-.5)*.4;item.vy=.15+Math.random()*.3;item.rotation=(Math.random()-.5)*20;item.spin=(Math.random()-.5)*.3;item.el.textContent=chars[Math.floor(Math.random()*chars.length)];item.el.style.fontSize=(20+Math.random()*50)+'px';item.el.style.color=colors[Math.floor(Math.random()*colors.length)];item.el.style.opacity=.05+Math.random()*.05;item.el.style.transform='translate('+item.x+'px,'+item.y+'px)';};
+ for(let i=0;i<(width<=768?28:50);i++){const el=document.createElement('span');el.className='cmg-fg-element';bg.append(el);const item={el};reset(item,true);items.push(item);}
+ function tick(time){raf=0;if(document.hidden||motion?.matches)return;const dt=last?Math.min((time-last)/16.667,2):1;last=time;
+  for(const item of items){const dx=item.x-mx,dy=item.y-my,dist=Math.hypot(dx,dy)+40,force=width<=768?.0036:.009;item.vx+=dx/dist*force*dt;item.vy+=(dy/dist*force+.015)*dt;const speed=Math.hypot(item.vx,item.vy);if(speed>.8){item.vx=item.vx/speed*.8;item.vy=item.vy/speed*.8;}item.vx*=Math.pow(.998,dt);item.vy*=Math.pow(.998,dt);item.x+=item.vx*dt;item.y+=item.vy*dt;item.rotation+=item.spin*dt;item.el.style.transform='translate('+item.x+'px,'+item.y+'px) rotate('+item.rotation+'deg)';if(item.y>height+60||item.x < -100||item.x>width+100)reset(item);}
+  raf=requestAnimationFrame(tick);
+ }
+ const schedule=()=>{if(raf&&typeof cancelAnimationFrame==='function')cancelAnimationFrame(raf);raf=0;last=0;bg.hidden=!!motion?.matches;if(!document.hidden&&!motion?.matches&&typeof requestAnimationFrame==='function')raf=requestAnimationFrame(tick);};
+ document.addEventListener('pointermove',e=>{if(width>768){mx=e.clientX;my=e.clientY;}},{passive:true});window.addEventListener('resize',()=>{width=window.innerWidth;height=window.innerHeight;mx=-1000;my=height/2;});document.addEventListener('visibilitychange',schedule);motion?.addEventListener?.('change',schedule);schedule();
+})();
 
 })();</script>
 </body></html>
