@@ -1,1 +1,33 @@
-<style>#dl-host{background:#f9eee5;overflow:clip}#dl-host iframe{display:block;width:100%;min-height:600px;border:0}#dl-status{font:14px/1.6 Arial,sans-serif;text-align:center;padding:25px;color:#6b1e2f}#dl-status[hidden]{display:none}.dl-host-top{position:fixed;right:16px;bottom:18px;width:46px;height:46px;border:0;border-radius:50%;background:#6b1e2f;color:#fffaf6;z-index:900;display:grid;place-items:center;font-size:23px;padding:0;opacity:0;visibility:hidden;transform:translateY(15px);transition:opacity .25s,transform .25s}.dl-host-top.is-visible{opacity:1;visibility:visible;transform:none}@media(prefers-reduced-motion:reduce){.dl-host-top{transition:none}}</style><div id="dl-host"><p id="dl-status" role="status">Загружаем урок… <a href="https://ekaterinalaoshi.github.io/chinesemapgame/deliverylesson/" target="_blank" rel="noopener">Открыть отдельно</a></p><iframe id="dl-frame" title="Сроки, поставка и оплата: 9 упражнений" scrolling="no" style="height:1200px"></iframe></div><button id="dl-top" class="dl-host-top" type="button" aria-label="Наверх">↑</button><script>(()=>{const frame=document.getElementById('dl-frame'),status=document.getElementById('dl-status'),top=document.getElementById('dl-top');const url=new URL('https://ekaterinalaoshi.github.io/chinesemapgame/deliverylesson/');const sendViewport=()=>{const rect=frame.getBoundingClientRect();frame.contentWindow.postMessage({type:'dl:viewport',top:Math.max(0,-rect.top),height:Math.max(100,Math.min(window.innerHeight,rect.bottom)-Math.max(0,rect.top))},url.origin);};window.addEventListener('scroll',sendViewport,{passive:true});window.addEventListener('resize',sendViewport);frame.addEventListener('load',sendViewport);url.searchParams.set('v','20261014-lesson1');url.searchParams.set('embed','1');url.searchParams.set('parentOrigin',location.origin);window.addEventListener('message',e=>{if(e.origin!==url.origin||e.source!==frame.contentWindow||e.data?.type!=='dl:height'||!Number.isFinite(e.data.height)||e.data.height<300||e.data.height>30000)return;frame.style.height=Math.ceil(e.data.height)+'px';status.hidden=true;sendViewport();});frame.src=url.href;document.body.append(top);const update=()=>top.classList.toggle('is-visible',window.scrollY>500);window.addEventListener('scroll',update,{passive:true});top.addEventListener('click',()=>window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));update();setTimeout(()=>{if(!status.hidden)status.innerHTML='Урок загружается дольше обычного. <a href="https://ekaterinalaoshi.github.io/chinesemapgame/deliverylesson/" target="_blank" rel="noopener">Открыть отдельно</a>';},15000);})();</script>
+<style>
+#dl-host{background:#f9eee5;overflow:clip}#dl-host iframe{display:block;width:100%;min-height:600px;border:0}#dl-status{font:14px/1.6 Arial,sans-serif;text-align:center;padding:25px;color:#6b1e2f}#dl-status[hidden]{display:none}.dl-host-top{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom));width:46px;height:46px;border:0;border-radius:50%;background:#6b1e2f;color:#fffaf6;z-index:900;display:grid;place-items:center;font-size:23px;padding:0;opacity:0;visibility:hidden;transform:translateY(15px);transition:opacity .25s,transform .25s}.dl-host-top.is-visible{opacity:1;visibility:visible;transform:none}.dl-host-top:focus-visible{outline:3px solid #b8864e;outline-offset:4px}@media(prefers-reduced-motion:reduce){.dl-host-top{transition:none}}
+</style>
+<div id="dl-host"><p id="dl-status" role="status">Загружаем урок… <a href="https://ekaterinalaoshi.github.io/chinesemapgame/deliverylesson/" target="_blank" rel="noopener">Открыть отдельно</a></p><iframe id="dl-frame" title="Сроки, поставка и оплата: 9 упражнений" scrolling="no" style="height:1200px"></iframe></div><button id="dl-top" class="dl-host-top" type="button" aria-label="Наверх">↑</button>
+<script>
+(()=>{
+ const frame=document.getElementById('dl-frame'),status=document.getElementById('dl-status'),topButton=document.getElementById('dl-top');
+ const url=new URL('https://ekaterinalaoshi.github.io/chinesemapgame/deliverylesson/');
+ const behavior=()=>matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+ const sendViewport=()=>{const rect=frame.getBoundingClientRect();frame.contentWindow.postMessage({type:'dl:viewport',top:Math.max(0,-rect.top),height:Math.max(100,Math.min(window.innerHeight,rect.bottom)-Math.max(0,rect.top))},url.origin);};
+ window.addEventListener('scroll',sendViewport,{passive:true});window.addEventListener('resize',sendViewport);frame.addEventListener('load',sendViewport);
+ url.searchParams.set('v','20261014-audit3');url.searchParams.set('embed','1');url.searchParams.set('parentOrigin',location.origin);
+ window.addEventListener('message',e=>{
+  if(e.origin!==url.origin||e.source!==frame.contentWindow)return;
+  const data=e.data;if(!data||typeof data!=='object')return;
+  if(data.type==='dl:height'){
+   if(!Number.isFinite(data.height)||data.height<300||data.height>30000)return;
+   frame.style.height=Math.ceil(data.height)+'px';status.hidden=true;sendViewport();
+  }else if(data.type==='dl:dialog'){
+   if(typeof data.open!=='boolean')return;
+   topButton.hidden=data.open;topButton.disabled=data.open;
+  }else if(data.type==='dl:navigate'){
+   if(!/^exercise-[1-9]$/.test(data.target)||!Number.isFinite(data.top)||data.top<0||data.top>30000||data.top>frame.getBoundingClientRect().height)return;
+   window.scrollTo({top:Math.max(0,window.scrollY+frame.getBoundingClientRect().top+data.top-24),behavior:behavior()});
+  }
+ });
+ frame.src=url.href;document.body.append(topButton);
+ const update=()=>topButton.classList.toggle('is-visible',window.scrollY>500);window.addEventListener('scroll',update,{passive:true});
+ topButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:behavior()}));update();
+ setTimeout(()=>{if(!status.hidden)status.innerHTML='Урок загружается дольше обычного. <a href="https://ekaterinalaoshi.github.io/chinesemapgame/deliverylesson/" target="_blank" rel="noopener">Открыть отдельно</a>';},15000);
+})();
+</script>
+<style>.dl-host-top[hidden]{display:none}</style>
